@@ -118,49 +118,32 @@ WHERE TRY_CONVERT(TIME, Cyclistic_tripdata.dbo.cyclistic_allmonths.Ride_Length) 
 delete from cte <br/><br/>
 
 
-1. Finding the avg ride length in minutes. <br/>
-![image](https://i.postimg.cc/N0S6ztXZ/sql1.png)<br/>
+1. Finding the avg ride length in minutes. <br/><br/>
+![image](https://i.postimg.cc/N0S6ztXZ/sql1.png)<br/><br/>
 
 2.Finding the busiest day of the week (1 as Sunday to 7 as Saturday)<br/>
 
 For members:<br/>
 
-![image](https://i.postimg.cc/VLmjTDSs/sql2.png)<br/>
+![image](https://i.postimg.cc/VLmjTDSs/sql2.png)<br/><br/>
 
-3. For Casuals<br/>
-![image](https://i.postimg.cc/qMw8dyns/sql3.png)<br/>
+3. For Casuals<br/><br/>
+![image](https://i.postimg.cc/qMw8dyns/sql3.png)<br/><br/>
 
-4. Calculating the above together.<br/>
-![image](https://i.postimg.cc/t4gFRJtL/sql4.png)<br/>
+4. Calculating the above together.<br/><br/>
+![image](https://i.postimg.cc/t4gFRJtL/sql4.png)<br/><br/>
 
-5.Average distance covered by Members vs Causals. <br/>
-![image](https://i.postimg.cc/FKdcc66p/sql5.png)<br/>
+5.Average distance covered by Members vs Causals. <br/><br/>
+![image](https://i.postimg.cc/FKdcc66p/sql5.png)<br/><br/>
 
-6.Most used rideable bike over the year. <br/>
-![image](https://i.postimg.cc/JhfXQqVL/sql6.png)<br/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+6.Most used rideable bike over the year. <br/><br/>
+![image](https://i.postimg.cc/JhfXQqVL/sql6.png)<br/><br/>
 
 
 
 ## Step 5: Share
 
+### Data Visualization: Created Report in Power BI using the DAX queries.
 
-Observations:  
-1. The table below shows the all column names and their data types. The __ride_id__ column is our primary key.  
 
-   ![image](https://i.postimg.cc/28nG3BDX/Cyclists-data-visualization.png)
+<br/>   ![image](https://i.postimg.cc/C5Qf6Tzz/dataviz.png) <br/>
