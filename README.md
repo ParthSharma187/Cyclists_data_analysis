@@ -18,6 +18,8 @@ Moreno has set a clear goal: Design marketing strategies aimed at converting cas
 ### Scenario
 I am assuming to be a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, my team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, my team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve our recommendations, so they must be backed up with compelling data insights and professional data visualizations.
 
+
+
 ## Ask
 ### Business Task
 Devise marketing strategies to convert casual riders to members.
@@ -40,7 +42,9 @@ Average ride duration by day of the week?<br/>
 
 Then, I will present recommendations for Cyclistic's marketing strategy.
 
-## Prepare
+
+
+## Step 2: Prepare
 ### Data Source
 I will use Cyclistic’s historical trip data to analyze and identify trends from Jan 2022 to Dec 2022 which can be downloaded from [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). The data has been made available by Motivate International Inc. under this [license](https://www.divvybikes.com/data-license-agreement).  
   
@@ -58,15 +62,102 @@ Downloaded 12 files (1 GB in total) corresponding to the months of May 2023 to A
 ![image](https://i.postimg.cc/0jHh2skY/downloaded-Data.png)
 
 <br/>Inspected the files in Microsoft Excel and found that all have the following attributes or headers:<br/><br/>
-![image](https://i.postimg.cc/rFQvQ55d/table-Columns.png)
+![image](https://i.postimg.cc/rFQvQ55d/table-Columns.png)<br/>
 
 
-## Process
-I. Cleaned the data with MS Escel <br/>
 
-Checked for incomplete values in all columns using the COUNTBLANK function. 
+## Step 2: Process
+
+### I. Data Cleaning
+1. Cleaned the data with MS Excel <br/>
+2. Counted number of rows of the IDs<br/>
+3. Made another column having Unique IDs using the filter function. <br/>
+4.Checked the number of rows in both the columns and they were equal, meaning that there were no duplicate IDs. <br/>
+5.Checked the number of blank rows by using the ‘find and select’ then ’ goto special’  option.<br/> 
+6.There were some values having apostrophe(‘) ahead of them. Cleaned them by using “=VALUE(L2)” formula. Used the ‘paste only value’ option to remove the reference. <br/>
+7. After calculating the Ride length , there were many values where the ride start time was greater than the ride end time. So the formula to find the time used by the cyclists was giving error. Hence, removed the values with error and 0 as the time taken.<br/> 
+8.Used the formula to find the distance travelled by them using the latitudes and longitudes.<br/>
+9.There were some end latitudes and longitudes where the value was entered ‘0’. Removed all the rows with such values as it was violating the formula of distance covered by the cyclists wrong. <br/>
+10. Checked for incomplete values in all columns using the COUNTBLANK function.<br/> 
 
 Found a significant number of missing values in start_station_name, start_station_id, end_station_name, and end_station_id, making them unreliable for data analysis. Thus, decided to delete them from each table.
+
+### II. Transformed the data with SQL
+ Created a table named cyclists_all_months to combine the rows from the 12 tables using the UNION ALL command.<br/>
+![image](https://i.postimg.cc/sD4Mhzgs/all-data-combined.png)<br/><br/>
+
+
+
+## Step 4: Analyse
+
+### I. What surprises did I discover in the data?<br/>
+Using Pivot tables, found that the electric bikes were the most used bike by the cyclists, slightly followed by the classic bikes. Docked bikes has very less usage as compared to both of them.<br/>
+
+### II. What trends or relationships did you find in the data?
+Using pivot tables, found that the subscribed members used the cycle most during the weekdays (having Tuesday and Wednesday as the most).<br/>
+And the casual members used the cycle most during the weekends.<br/>
+
+![image](https://i.postimg.cc/xTM4Gsw0/pivotbikes.png)
+
+### III. What trends or relationships did I find in the data?
+Using pivot tables, found that the subscribed members used the cycle most during the weekdays (having Tuesday and Wednesday as the most).<br/>
+And the casual members used the cycle most during the weekends.<br/>
+
+![image](https://i.postimg.cc/QMXkTS3n/weekday-count.png)
+
+### IV. SQL Server analysis 
+Firstly deleted some rows having distacne as 0 <br/>
+{ delete from dbo.cyclistic_allmonths where dbo.cyclistic_allmonths.distance_covered=0;}<br/>
+
+Deleted the ride length values as Null and ‘###’. <br/>
+with cte as (
+select  Cyclistic_tripdata.dbo.cyclistic_allmonths.Ride_Length
+FROM Cyclistic_tripdata.dbo.cyclistic_allmonths
+WHERE TRY_CONVERT(TIME, Cyclistic_tripdata.dbo.cyclistic_allmonths.Ride_Length) IS NULL )
+
+delete from cte <br/><br/>
+
+
+1. Finding the avg ride length in minutes. <br/>
+![image](https://i.postimg.cc/N0S6ztXZ/sql1.png)<br/>
+
+2.Finding the busiest day of the week (1 as Sunday to 7 as Saturday)<br/>
+
+For members:<br/>
+
+![image](https://i.postimg.cc/VLmjTDSs/sql2.png)<br/>
+
+3. For Casuals<br/>
+![image](https://i.postimg.cc/qMw8dyns/sql3.png)<br/>
+
+4. Calculating the above together.<br/>
+![image](https://i.postimg.cc/t4gFRJtL/sql4.png)<br/>
+
+5.Average distance covered by Members vs Causals. <br/>
+![image](https://i.postimg.cc/FKdcc66p/sql5.png)<br/>
+
+6.Most used rideable bike over the year. <br/>
+![image](https://i.postimg.cc/JhfXQqVL/sql6.png)<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 5: Share
 
 
 Observations:  
