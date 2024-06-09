@@ -45,6 +45,14 @@ Then, I will present recommendations for Cyclistic's marketing strategy.
 I will use Cyclistic’s historical trip data to analyze and identify trends from Jan 2022 to Dec 2022 which can be downloaded from [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). The data has been made available by Motivate International Inc. under this [license](https://www.divvybikes.com/data-license-agreement).  
   
 This is public data that can be used to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit from using riders’ personally identifiable information. This means that we won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
+
+● How am I addressing licensing, privacy, security, and accessibility?
+
+Licensing: Verified that the dataset is under an Open Government License, allowing free use with attribution. Included a citation in my report.<br/>
+Privacy: Ensured that any PII has been removed or anonymized. Aggregated data to avoid potential re-identification of individuals.<br/>
+Security: Data is stored the dataset on a secure server with encryption and restrict access to authorized personnel only. Uses HTTPS for data transfers.<br/>
+Accessibility: Data is provided in CSV format with detailed metadata. Ensuring that the website hosting the dataset meets WCAG standards and offer the data in alternative formats if necessary.<br/>
+
 ### Data Organization
 Downloaded 12 files (1 GB in total) corresponding to the months of May 2023 to April 2024.<br/>
 ![image](https://i.postimg.cc/0jHh2skY/downloaded-Data.png)
