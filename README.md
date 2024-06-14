@@ -147,3 +147,21 @@ For members:<br/>
 
 
 <br/>   ![image](https://i.postimg.cc/C5Qf6Tzz/dataviz.png) <br/>
+
+
+## Step 6: Act
+Based on these findings, I recommend the following strategies to help Cyclistic convert more casual riders into member riders:<br/><br/>
+I. Expand electric bike fleet<br/>
+As casual riders tend to prefer electric bikes, Cyclistic could consider expanding its electric bike fleet to attract more casual riders. This could include offering discounts or promotions for new member riders who choose the electric bike option.<br/><br/>
+
+II. Promote summer riding
+Since casual riders typically rent bikes the most during the summer, Cyclistic could develop a summer promotion campaign that offers discounts or other incentives to encourage them to become member riders during this peak season.<br/><br/>
+
+III. Offer flexible pricing plans<br/>
+Since casual riders usually rent bikes more during weekends, Cyclistic could consider offering flexible pricing plans that allow weekend-only usage at a discounted rate. This could appeal to casual riders who may not want to commit to a full annual membership.<br/><br/>
+
+IV. Host events during peak hours<br/>
+During peak hour periods (around 5 PM), Cyclistic could host events that cater to the needs of casual riders and promote the benefits of becoming a member rider. This could include commuter-focused events, such as group rides or bike safety classes, that help riders feel more comfortable using bikes for commuting purposes.<br/><br/>
+
+V. Offer bike storage solutions<br/>
+Because casual riders tend to rent bikes for longer periods, Cyclistic could consider offering bike storage solutions (especially on weekends) to make it easier for casual riders to store their bikes safely and conveniently during longer rides or breaks.
